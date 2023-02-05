@@ -959,6 +959,37 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!--sending-automated-discord-messages-through-webhooks-using-javascript comments by ram--->
+  <script>
+    var request = new XMLHttpRequest();
+request.open("POST", "https://discord.com/api/webhooks/1045762855280062604/8d0cMheTQn-c5MQO0hQ32FeEQqh7eqd_wK9luTH9NPgK_tAMBxhOkyPhFUBZENCU6-6M");
+
+request.setRequestHeader('Content-type', 'application/json');
+
+var myEmbed = {
+  author: {
+    name: "rootleeconsign typing..."
+  },
+  title: "rootleeconsign",
+  description: "New visitor on rootleeconsign.html",
+  color: hexToDecimal("#ff0000")
+}
+
+var params = {
+  username: "ramhooks",
+  embeds: [ myEmbed ]
+}
+
+request.send(JSON.stringify(params));
+
+// function that converts a color HEX to a valid Discord color
+function hexToDecimal(hex) {
+  return parseInt(hex.replace("#",""), 16)
+}
+
+    </script>
+
+
 </body>
 
 </html>
